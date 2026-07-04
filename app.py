@@ -12,8 +12,26 @@ SHARE_FOLDER = config.SHARE_FOLDER
 os.chdir(SHARE_FOLDER)
 
 # Automatically get local IP address
-hostname = socket.gethostname()
-local_ip = socket.gethostbyname(hostname)
+# hostname = socket.gethostname()
+# local_ip = socket.gethostbyname(hostname)
+
+
+
+
+def get_local_ip():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(("8.8.8.8", 80))
+        return s.getsockname()[0]
+    finally:
+        s.close()
+
+local_ip = get_local_ip()
+
+
+
+
+
 
 url = f"http://{local_ip}:{PORT}"
 
