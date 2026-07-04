@@ -3,9 +3,10 @@ import socketserver
 import os
 import socket
 import qrcode
+import config
 
-PORT = 8081
-SHARE_FOLDER = r"C:\Users\youzer\Downloads\sharefile"
+PORT = config.PORT
+SHARE_FOLDER = config.SHARE_FOLDER
 
 # Change working directory to shared folder
 os.chdir(SHARE_FOLDER)
@@ -18,7 +19,7 @@ url = f"http://{local_ip}:{PORT}"
 
 # Generate QR code
 qr = qrcode.make(url)
-qr.save("fileserver_qr.png")
+qr.save(config.QR_FILENAME)
 qr.show()
 
 print(f"QR code generated for: {url}")
