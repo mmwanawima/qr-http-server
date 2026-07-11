@@ -1,29 +1,35 @@
-# Python cache
+# Python bytecode and cache
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 
 # Virtual environments
 venv/
 env/
 .venv/
+.env/
 
-# Environment config (local only)
-config.py
+# IDE and Editor settings
+.vscode/
+.idea/
+*.swp
 
-# Generated QR images
-fileserver_qr.png
-
-# Logs
-*.log
-
-# OS files
+# OS generated files
 .DS_Store
 Thumbs.db
 
-# IDE settings
-.vscode/
-.idea/
+# PyInstaller build artifacts
+# Remove *.spec if you intend to version control your build config
+build/
+dist/
+*.spec
 
-# documentation
+# Project-specific / Temporary
+config.json
+fileserver_qr.png
+*.log
 documentation/
+
+# Python packaging
+*.egg-info/
