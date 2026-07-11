@@ -1,0 +1,11 @@
+# 1. create project
+python -m venv venv
+
+# 2. activate
+venv\Scripts\activate
+
+# 3. install dependencies
+pip install qrcode[pil]
+
+# 4. freeze
+pip freeze > requirements.txt
